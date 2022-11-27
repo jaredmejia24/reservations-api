@@ -73,57 +73,57 @@ Steps to build a Docker image:
 
 ### Create reservation
 
-    POST http://localhost:4000/api/v1/reservations
+POST http://localhost:4000/api/v1/reservations
 
-    This endpoint will create a reservation, if status is sent it will automatically remove it,
-    this endpoint will return the created reservation. You will need to send a json similiar to this:
+This endpoint will create a reservation, if status is sent it will automatically remove it,
+this endpoint will return the created reservation. You will need to send a json similiar to this:
 
-    ```create-reservation-json
-    {
-    "roomDetails": "A very spacious room with 1 bed and 1 bathroom",
-    "stayDays": 2,
-    "paymentMethod": "paypal",
-    "amountPaid": 125.25,
-    "billingInformation": "some billing information",
-    "clientId": 1
-    }
-    ```
+```create-reservation-json
+{
+"roomDetails": "A very spacious room with 1 bed and 1 bathroom",
+"stayDays": 2,
+"paymentMethod": "paypal",
+"amountPaid": 125.25,
+"billingInformation": "some billing information",
+"clientId": 1
+}
+```
 
 ### Update reservation
 
-    PATCH http://localhost:4000/api/v1/reservations/:id
+PATCH http://localhost:4000/api/v1/reservations/:id
 
-    :id needs to be replace with the number of the reservation id
+:id needs to be replace with the number of the reservation id
 
-    This endpoint will update a reservation, all properties are optional and will only take
-    the values sent, if status is sent it will automatically remove it, this endpoint will
-    return the updated reservation. You will need to send a json similiar to this:
+This endpoint will update a reservation, all properties are optional and will only take
+the values sent, if status is sent it will automatically remove it, this endpoint will
+return the updated reservation. You will need to send a json similiar to this:
 
-    ```update-reservation-json
-    {
-    "roomDetails": "A very spacious room with 1 bed and 1 bathroom",
-    "stayDays": 2,
-    "paymentMethod": "paypal",
-    "amountPaid": 125.25,
-    "billingInformation": "some billing information",
-    "clientId": 1
-    }
-    ```
+```update-reservation-json
+{
+"roomDetails": "A very spacious room with 1 bed and 1 bathroom",
+"stayDays": 2,
+"paymentMethod": "paypal",
+"amountPaid": 125.25,
+"billingInformation": "some billing information",
+"clientId": 1
+}
+```
 
 ### Delete reservation
 
-    DELETE http://localhost:4000/api/v1/reservations/:id
+DELETE http://localhost:4000/api/v1/reservations/:id
 
-    :id needs to be replace with the number of the reservation id
+:id needs to be replace with the number of the reservation id
 
-    This endpoint will update the reservation status to deleted (soft delete), this endpoint
-    doesn't return anything.
+This endpoint will update the reservation status to deleted (soft delete), this endpoint
+doesn't return anything.
 
 ### Pay reservation
 
-    PATCH http://localhost:4000/api/v1/reservations/pay/:id
+PATCH http://localhost:4000/api/v1/reservations/pay/:id
 
-    :id needs to be replace with the number of the reservation id
+:id needs to be replace with the number of the reservation id
 
-    This endpoint will update the reservation status to payed, if the reservation is already
-    payed it will send an error, this endpoint will return the updated reservation.
+This endpoint will update the reservation status to payed, if the reservation is already
+payed it will send an error, this endpoint will return the updated reservation.
