@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  node_backend:
+    container_name: api_reservations
+    image: api_reservations:0.0.1
+    build: 
+      context: .
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=password
+      - DB=db_reservations
+      - DB_PORT=5432
+      - DB_HOST=db_reservations
+    depends_on:
+      - db_reservations
+  db_reservations:
+    container_name: db_reservations
+    image: "postgres:12"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db_reservations
+    volumes:
+      - nps_data:/var/lib/postgresql/data
+
+volumes:
+  nps_data: {}
