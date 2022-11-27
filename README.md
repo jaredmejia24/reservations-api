@@ -5,13 +5,13 @@
 - [Prerequisites](#prerequisites)
 - [Build](#build)
 - [Endpoints](#endpoints)
-    -[Notes](#note)
-    -[Get all reservations](#get-all-reservation)
-    -[Get reservation by id](#get-reservation-by-id)
-    -[Create reservation](#create-reservation)
-    -[Update reservation](#update-reservation)
-    -[Delete reservation](#update-reservation)
-    -[Pay reservation](#pay-reservation)
+    - [Notes](#note)
+    - [Get all reservations](#get-all-reservation)
+    - [Get reservation by id](#get-reservation-by-id)
+    - [Create reservation](#create-reservation)
+    - [Update reservation](#update-reservation)
+    - [Delete reservation](#update-reservation)
+    - [Pay reservation](#pay-reservation)
 
 ## prerequisites
 
